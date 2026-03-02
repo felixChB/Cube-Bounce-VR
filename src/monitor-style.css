@@ -1,0 +1,235 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /* overflow: hidden; */
+    background-color: rgb(35, 35, 35);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    position: relative;
+}
+
+button {
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+p {
+    margin: 0px 0px 3px 0px;
+}
+
+#monitor-header {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    background-color: rgb(35, 35, 35);
+    color: white;
+    padding: 0px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 10;
+}
+
+#monitor-header div {
+    margin: 5px 10px;
+}
+
+#monitor-body-wrapper {
+    padding-top: 40px; /* Adjusted to account for the header height */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100% - 40px);
+}
+
+#clients-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 100%;
+    background-color: rgb(35, 35, 35);
+    color: white;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.expanded {
+    height: 80% !important;
+    border-radius: 10px 10px 0 0;
+}
+
+#clients-header {
+    background-color: #222;
+    color: white;
+    padding: 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#clients-header:hover {
+    cursor: pointer;
+}
+
+#clients-headline {
+    font-size: 1.2em;
+    font-weight: normal;
+    margin: 10px 5px 5px 5px;
+    position: relative;
+}
+
+#clients-list {
+    overflow-y: auto;
+}
+
+/* #clients-headline::before {
+    content: "";
+    border: solid rgb(255, 255, 255);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    transform: rotate(225deg);
+} */
+
+.client {
+    border: solid 1px white;
+    margin: 0px 5px 5px 5px;
+}
+
+.this-client {
+    color: red !important;
+    border-color: red !important;
+}
+
+.leaderboard-client {
+    color: rgb(255 168 32) !important;
+    border-color: rgb(255 168 32) !important;
+}
+
+.monitor-client {
+    color: rgb(255, 122, 144) !important;
+    border-color: rgb(255, 122, 144) !important;
+}
+
+.player-client {
+    color: rgb(162, 128, 255) !important;
+    border-color: rgb(162, 128, 255) !important;
+}
+
+.client-infos {
+    margin: 5px;
+}
+
+.leaderboard {
+    color: yellow !important;
+    border-color: yellow !important;
+}
+
+#game-monitor-wrapper {
+    display: block;
+    position: relative;
+    width: 80%;
+    height: 100%;
+}
+
+#game-timer {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 40px);
+    width: 40px;
+    z-index: 100;
+    color: red;
+    border: solid 1px red;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+
+#game-monitor-interface {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#player-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 50% 50%;
+    z-index: 10;
+}
+
+.player-div {
+    border: solid 1px black;
+}
+
+#renderCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+    z-index: 1;
+}
+
+.xr-button-overlay {
+    display: none;
+}
+
+
+@media only screen and (max-width: 900px) {
+    body {
+        justify-content: start;
+    }
+
+    #monitor-body-wrapper {
+        flex-direction: column;
+        width: 100%;
+        height: calc(100% - 40px - 40px);
+        position: relative;
+    }
+
+    #game-monitor-wrapper {
+        width: 100%;
+    }
+
+    #clients-header {
+        height: 40px !important;
+        width: 100%;
+    }
+
+    #clients-wrapper {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        z-index: 100;
+        overflow: hidden;
+    }
+}

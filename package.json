@@ -1,0 +1,36 @@
+{
+  "name": "ball-bouncer-vr",
+  "version": "2.0.0",
+  "description": "webbased XR Game using BabylonJS and Socket.IO",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.21.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+  },
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "build": "webpack --config webpack.config.cjs",
+    "start": "node server.js",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\"",
+    "serve": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babylonjs/core": "^7.34.1",
+    "@babylonjs/inspector": "^7.40.3",
+    "@babylonjs/loaders": "^7.34.1",
+    "concurrently": "^9.1.0",
+    "css-loader": "^7.1.2",
+    "nodemon": "^3.1.7",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.3",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
