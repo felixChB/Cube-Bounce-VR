@@ -1,4 +1,4 @@
-# Cube Bounce VR
+# CUBE BOUNCE VR
 
 # About
 
