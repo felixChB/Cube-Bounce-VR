@@ -1,4 +1,4 @@
-# WebXRBabylonIO - VR-PONG
+# Cube Bounce VR
 
 # About
 

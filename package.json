@@ -1,5 +1,5 @@
 {
-  "name": "ball-bouncer-vr",
+  "name": "cube-bounce-vr",
   "version": "2.0.0",
   "description": "webbased XR Game using BabylonJS and Socket.IO",
   "type": "module",
