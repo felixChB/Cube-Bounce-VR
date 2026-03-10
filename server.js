@@ -1492,3 +1492,7 @@ function setGameTimer() {
         }
     }, 1000);
 }
+
+socket.on('close', (code, reason) => {
+  console.log(`Connection closed: Code ${code}, Reason: ${reason}`);
+});
