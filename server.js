@@ -688,6 +688,10 @@ io.on('connection', (socket) => {
         console.log('Leaderboard requested.');
         socket.emit('sendLeaderboard', leaderboard);
     });
+
+    socket.on('close', (code, reason) => {
+        console.log(`Connection closed: Code ${code}, Reason: ${reason}`);
+    });
 });
 
 httpsServer.listen(port, ipAdress, () => {
@@ -1492,7 +1496,3 @@ function setGameTimer() {
         }
     }, 1000);
 }
-
-socket.on('close', (code, reason) => {
-  console.log(`Connection closed: Code ${code}, Reason: ${reason}`);
-});
