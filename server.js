@@ -222,6 +222,8 @@ const ballStartColor = '#1f53ff';
 const calculatedCubeHeight = playCubeSize.y - playCubeElevation;
 const midPointOfPlayCube = ((playCubeSize.y - playCubeElevation) / 2) + playCubeElevation;
 
+// define the limits of the different areas for each player position
+// used to calculate if a player is in the correct area or not, and to trigger the area entered and area exit events
 const position1PositiveAreaLimit = playCubeSize.z / 2;
 const position1NegativeAreaLimit = -playCubeSize.z / 2;
 const position1FontAreaLimit = playCubeSize.x / 2 + playerAreaDistance;
@@ -241,6 +243,7 @@ const position4PositiveAreaLimit = playCubeSize.x / 2;
 const position4NegativeAreaLimit = -playCubeSize.x / 2;
 const position4FontAreaLimit = -(playCubeSize.z / 2 + playerAreaDistance);
 const position4BackAreaLimit = -(playCubeSize.z / 2 + playerAreaDistance + playerAreaDepth);
+// end limits
 
 let activeColor = ballStartColor;
 
