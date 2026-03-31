@@ -1,0 +1,6 @@
+{
+  "name": "@game/client",
+  "dependencies": {
+    "@game/shared": "*"
+  }
+}
