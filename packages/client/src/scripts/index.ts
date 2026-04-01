@@ -47,8 +47,8 @@ let rightController: WebXRInputSource | null = null;
 const guiTextElements: { [key: string]: GUI.TextBlock } = {};
 const guiRectElements: { [key: string]: GUI.Rectangle } = {};
 
-let exitGameAreaInterval: NodeJS.Timer | null = null;
-let enteredGameAreaInterval: NodeJS.Timer | null = null;
+let exitGameAreaInterval: ReturnType<typeof setTimeout> | null = null;
+let enteredGameAreaInterval: ReturnType<typeof setTimeout> | null = null;
 
 const ghostColor = '#bdbdbd';
 
@@ -1802,14 +1802,14 @@ function updateHUDInfo(eventType: string, eventTimerTime: number = 0) {
             timer -= 1;
             guiTextElements['client_HUDLabel'].text = `Exit Game in: \n${timer}s\n`;
             if (timer <= 0) {
-                clearInterval(exitGameAreaInterval as NodeJS.Timeout);
+                clearInterval(exitGameAreaInterval as ReturnType<typeof setTimeout>);
                 timer = eventTimerTime / 1000;
             }
         }, 1000);
     } else if (eventType == 'reenteredGameArea') {
         guiTextElements['client_HUDLabel'].text = ``;
         guiTextElements['client_HUDLabel'].color = "red";
-        clearInterval(exitGameAreaInterval as NodeJS.Timeout);
+        clearInterval(exitGameAreaInterval as ReturnType<typeof setTimeout>);
     } else if (eventType == 'enteredGameArea') {
         guiRectElements['client_HUDRect'].color = playerStartInfos[playerList[clientID].inPosition].color;
         guiTextElements['client_HUDLabel'].text = `Join Game in: \n${eventTimerTime / 1000}s\n`;
@@ -1820,14 +1820,14 @@ function updateHUDInfo(eventType: string, eventTimerTime: number = 0) {
             timer -= 1;
             guiTextElements['client_HUDLabel'].text = `Join Game in: \n${timer}s\n`;
             if (timer <= 0) {
-                clearInterval(enteredGameAreaInterval as NodeJS.Timeout);
+                clearInterval(enteredGameAreaInterval as ReturnType<typeof setTimeout>);
                 timer = eventTimerTime / 1000;
             }
         }, 1000);
     } else if (eventType == 'exitJoiningGameArea') {
         guiTextElements['client_HUDLabel'].text = ``;
         guiTextElements['client_HUDLabel'].color = "red";
-        clearInterval(enteredGameAreaInterval as NodeJS.Timeout);
+        clearInterval(enteredGameAreaInterval as ReturnType<typeof setTimeout>);
     }
 }
 
