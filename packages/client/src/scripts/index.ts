@@ -1,13 +1,13 @@
 import { io } from 'socket.io-client';
-import { /*Camera,*/ Engine, FreeCamera, /*Material,*/ /*PBRBaseMaterial,*/ PBRMaterial, Scene } from '@babylonjs/core';
-import { /*ArcRotateCamera,*/ MeshBuilder, GlowLayer, Animation } from '@babylonjs/core';
-import { DirectionalLight, PointLight } from '@babylonjs/core';
-import { Mesh, StandardMaterial, Texture, Color3, Color4, Vector3, Quaternion, CubeTexture } from '@babylonjs/core';
-import { WebXRDefaultExperience, WebXRInputSource } from '@babylonjs/core/XR';
-import * as GUI from '@babylonjs/gui';
+import { /*Camera,*/ Engine, FreeCamera, /*Material,*/ /*PBRBaseMaterial,*/ PBRMaterial, Scene } from 'babylonjs';
+import { /*ArcRotateCamera,*/ MeshBuilder, GlowLayer, Animation } from 'babylonjs';
+import { DirectionalLight, PointLight } from 'babylonjs';
+import { Mesh, StandardMaterial, Texture, Color3, Color4, Vector3, Quaternion, CubeTexture } from 'babylonjs';
+import { WebXRDefaultExperience, WebXRInputSource } from 'babylonjs';
+import * as GUI from 'babylonjs-gui';
 
 //import '@babylonjs/core/Materials/Textures/Loaders'; // Required for EnvironmentHelper
-import '@babylonjs/loaders/glTF'; // Enable GLTF/GLB loader for loading controller models from WebXR Input registry
+//import '@babylonjs/loaders/glTF'; // Enable GLTF/GLB loader for loading controller models from WebXR Input registry
 
 //import { Inspector } from '@babylonjs/inspector';
 
