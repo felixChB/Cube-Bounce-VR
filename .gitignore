@@ -1,3 +1,4 @@
-sslcerts/
-dist/
+packages/server/sslcerts/
+packages/client/dist/
+packages/shared/dist/
 node_modules/
